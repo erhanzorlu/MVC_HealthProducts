@@ -13,5 +13,11 @@ namespace Project.ENTITIES.Models
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string ImagePath { get; set; }
+
+        //Relational Property
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
+
     }
 }
