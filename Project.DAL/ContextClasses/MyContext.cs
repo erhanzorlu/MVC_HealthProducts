@@ -18,10 +18,15 @@ namespace Project.DAL.ContextClasses
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductMap());
+            modelBuilder.Configurations.Add(new AppUserMap());
+            modelBuilder.Configurations.Add(new CategoryMap());
+           
 
 
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
 
     }
