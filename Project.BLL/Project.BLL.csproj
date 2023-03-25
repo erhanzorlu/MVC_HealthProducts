@@ -51,11 +51,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesingPaterns\SingletonPatern\DBTool.cs" />
+    <Compile Include="GenericRepository\BaseRep\BaseRepository.cs" />
+    <Compile Include="GenericRepository\ConcRep\AppUserRepository.cs" />
+    <Compile Include="GenericRepository\ConcRep\CategoryRepository.cs" />
+    <Compile Include="GenericRepository\ConcRep\ProductRepository.cs" />
+    <Compile Include="GenericRepository\IntRep\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
+      <Project>{1bf78624-a28c-4052-9901-deed0ae6dd3c}</Project>
+      <Name>Project.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
+      <Project>{8b8311cb-df00-49cb-9936-4f543d643f81}</Project>
+      <Name>Project.ENTITIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.MAP\Project.MAP.csproj">
+      <Project>{10bb5303-acfe-4142-835e-625b749f27a3}</Project>
+      <Name>Project.MAP</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
