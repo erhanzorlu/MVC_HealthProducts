@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.ENTITIES.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project.MAP.Options
 {
-    public class BaseMap<T>:EntityTypeConfiguration<T> where T : class
+    public class BaseMap<T>:EntityTypeConfiguration<T> where T : BaseEntity
     {
     }
 }

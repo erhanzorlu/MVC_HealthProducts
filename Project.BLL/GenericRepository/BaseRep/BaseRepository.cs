@@ -18,111 +18,128 @@ namespace Project.BLL.GenericRepository.BaseRep
         {
             _db = DBTool.DbInstance;
         }
+        void Save()
+        {
+            _db.SaveChanges();
+        }
 
         public void Add(T item)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Add(item);
+            Save();
         }
 
         public void AddRange(List<T> list)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().AddRange(list);
+            Save();
         }
 
         public bool Any(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Any(exp);
         }
 
         public void Delete(T item)
         {
-            throw new NotImplementedException();
+            item.Status = ENTITIES.Enums.DataStatus.Deleted;
+            item.DeletedDate = DateTime.Now;
+            Save();
         }
 
         public void DeleteRange(List<T> list)
         {
-            throw new NotImplementedException();
+            foreach (T item in list)
+            {
+                Delete(item);
+            }
         }
 
         public void Destroy(T item)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Remove(item);
+            Save();
         }
 
         public void DestroyRange(List<T> list)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().RemoveRange(list);
+            Save();
         }
 
         public T Find(int id)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Find(id);
         }
 
         public T FirstOrDefault(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().FirstOrDefault(exp);
         }
 
         public List<T> GetActives()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted);
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().ToList();
         }
 
         public List<T> GetCountedDatas(int number)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Take(number).ToList();
         }
 
         public List<T> GetFirstDatas(int number)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderBy(x => x.CreatedDate).Take(number).ToList();
         }
 
         public List<T> GetLastDatas(int number)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderByDescending(x => x.CreatedDate).Take(number).ToList();
         }
 
         public List<T> GetModifieds()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status == ENTITIES.Enums.DataStatus.Updated);
         }
 
         public List<T> GetPassives()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status == ENTITIES.Enums.DataStatus.Deleted);
         }
 
         public IQueryable<X> Select<X>(Expression<Func<T, X>> exp) where X : class
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Select(exp);
         }
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            item.Status = ENTITIES.Enums.DataStatus.Updated;
+            item.UpdatedDate = DateTime.Now;
+            T toBeUpdated = Find(item.ID);
+            _db.Entry(toBeUpdated).CurrentValues.SetValues(item);
+            Save();
         }
 
         public void UpdateRange(List<T> list)
         {
-            throw new NotImplementedException();
+            foreach (T item in list)
+            {
+                Update(item);
+            }
         }
 
         public List<T> Where(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Where(exp).ToList();
         }
 
-        protected void Save()
-        {
-            _db.SaveChanges();
-        }
+       
 
      
     }
