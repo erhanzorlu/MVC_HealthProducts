@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33513.286
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.ENTITIES", "Project.ENTITIES\Project.ENTITIES.csproj", "{8B8311CB-DF00-49CB-9936-4F543D643F81}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.ViewModels", "Project.ViewModels\Project.ViewModels.csproj", "{90B7191C-C576-4045-A53C-F58ADE2553CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.MVCUI", "Project.MVCUI\Project.MVCUI.csproj", "{F72EB7DA-B327-44F9-B734-DE5F900DA6BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.COMMON", "Project.COMMON\Project.COMMON.csproj", "{90D69B70-042B-4724-A35C-3BFF67F075C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F72EB7DA-B327-44F9-B734-DE5F900DA6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72EB7DA-B327-44F9-B734-DE5F900DA6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72EB7DA-B327-44F9-B734-DE5F900DA6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D69B70-042B-4724-A35C-3BFF67F075C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D69B70-042B-4724-A35C-3BFF67F075C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D69B70-042B-4724-A35C-3BFF67F075C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D69B70-042B-4724-A35C-3BFF67F075C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

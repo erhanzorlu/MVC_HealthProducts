@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.ViewModels.VMClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,12 +28,17 @@ namespace Project.MVCUI.Controllers
             return View();
         }
 
-        public ActionResult Register()
+        public ActionResult Register() //Üye ol
         {
-
             return View();
         }
-        public ActionResult Login()
+
+        [HttpPost]
+        public ActionResult Register(AppUserVM appUser) //Üye ol
+        {
+            return View();
+        }
+        public ActionResult Login()// Giriş yap
         {
 
             return View();
